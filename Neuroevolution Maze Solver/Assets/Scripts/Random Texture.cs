@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using UnityEngine;
+using System.IO;
 
 public class RandomTexture : MonoBehaviour
 {
@@ -52,6 +54,8 @@ public class RandomTexture : MonoBehaviour
         {
             Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
             gameObject.GetComponent<SpriteRenderer>().sprite = sprite;
+            byte[] bytes = ImageConversion.EncodeToPNG(texture);
+            File.WriteAllBytes(Application.dataPath + "/SavedTexture.png", bytes);
             toSet = false;
         }
     }
