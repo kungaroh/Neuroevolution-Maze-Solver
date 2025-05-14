@@ -6,7 +6,7 @@ using UnityEditor;
 
 
 //Script to edit
-[CustomEditor(typeof(RandomTexture))]
+[CustomEditor(typeof(ProceduralMazeGenerator))]
 public class EditorMazeGeneration : Editor
 {
     public override void OnInspectorGUI()
@@ -16,10 +16,10 @@ public class EditorMazeGeneration : Editor
         EditorGUILayout.Space();
         
         //Script to edit
-        RandomTexture randomTexture = (RandomTexture)target;
+        ProceduralMazeGenerator procGenMaze = (ProceduralMazeGenerator)target;
         if (GUILayout.Button("Generate Maze"))
         {
-            randomTexture.GenerateTexture();
+            procGenMaze.StartGeneration();
         }
     }
 }
