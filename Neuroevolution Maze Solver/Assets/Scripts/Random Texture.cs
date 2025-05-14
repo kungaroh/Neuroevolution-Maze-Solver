@@ -42,7 +42,7 @@ public class RandomTexture : MonoBehaviour
                     }
                     else
                     {
-                        texture.SetPixel(i, j, Color.red);
+                        texture.SetPixel(i, j, Color.white);
                     }
                 }
             }
