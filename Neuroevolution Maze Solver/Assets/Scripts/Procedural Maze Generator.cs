@@ -23,6 +23,11 @@ public class ProceduralMazeGenerator : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        if (width % 2 == 0 || height % 2 == 0)
+        {
+            Debug.LogError("Width and Height must be odd.");
+            return;
+        }
         StartGeneration();
     }
 
